@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>soma</title>
+</head>
+<body>
+   <h1>Digite dois valores!</h1>
+   <input type="number" name="v1" id="iv1">
+   +
+   <input type="number" name="v2" id="iv2">
+   <button onclick="somar()">Somar</button> 
+   <div id="res">
+        Resultado
+   </div>
+
+   <script>
+        function somar(){
+            var v1 = window.document.getElementById('iv1')
+            var v2 = window.document.querySelector('input#iv2')
+            var res = window.document.getElementById('res')
+            var v1 = Number(v1.value)
+            var v2 = Number(v2.value)
+            window.document.getElementById('res').innerText = v1 + v2
+            res.style.backgroundColor = 'red'
+            res.style.color = 'white'
+            res.style.width = '50px'
+            res.style.height = '50px'
+            res.style.textAlign = 'center'
+            res.style.lineHeight = '50px'
+            res.style.borderRadius = '50%'
+            res.style.fontSize = '1em'
+            res.style.margin = 'auto'
+            res.style.marginTop = '10px'
+        }
+        
+   </script>
+</body>
+</html>
