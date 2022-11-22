@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício proposto</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: rgb(110, 110, 213);
+        }
+
+        h1 {
+            
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            text-transform: uppercase;
+            font-size: 1.6em;
+            background-color: white;
+            padding: 5px;
+            border-radius:10px;
+        }
+
+        fieldset {
+            border: 2px solid white;
+        }
+
+        legend {
+            font-variant: small-caps;
+            font-weight: bolder;
+        }
+
+        input[type = text] {
+            width: 100px;
+            height: 20px;
+            border-radius: 5px;
+            
+        }
+
+        input[type = button]{
+            height: 25px;
+            text-align: right;
+            
+        }
+        
+        p {
+            background-color: white;
+        }
+
+        div#bras > p {
+            display: inline-block;
+            font-size: 1em;
+            background-color: white;
+            margin-top: 77px;
+        }
+       
+        #bras{
+        display: inline-block;
+        background-image: url(bandeira.jpg); 
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        height: 100px;
+        width: 200px;
+        } 
+    </style>
+</head>
+<body>
+    <h1>
+        Sistema de Nacionalidade!
+    </h1>
+    <fieldset>
+        <legend>Nacionalidade</legend>
+        <input type="text" name="txt" id="txt" placeholder="País">
+        <input type="button" value="Checar" onclick="checar()">
+        
+    </fieldset>
+    <div id="res">
+        
+            
+    </div>
+            
+    
+        
+    <script>
+        function checar(){
+            var nasc = window.document.getElementById('txt')
+            var res = window.document.getElementById('res')
+            var nasc1 = String(nasc.value)
+            res.innerHTML = `<p>Você nasceu no<sup>(a)</sup><strong> ${nasc1}</strong></p>`
+            if (nasc1 == 'Brasil'){
+                res.innerHTML += '<div id="bras"><p>Você é <strong>Brasileiro<sup>(a)</sup></strong> </p> </div>'
+                
+            }
+            else {
+                res.innerHTML += '<p>Você é Estrangeiro<sup>(a)</sup> </p>'
+            }
+        }
+    </script>
+</body>
+</html>
