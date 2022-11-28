@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculando</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>
+            Identificador de idade
+        </h1>
+    </header>
+    <section>
+        <div>
+            <p>
+                <STRONG>Ano de Nascimento:</STRONG> 
+                <input type="number" name="txtano" id="txtano">
+            </p>
+            <p>
+                <STRONG>Sexo:</STRONG>
+                <input type="radio" name="sexo" id="masc" checked>
+                <label for="masc"><STRONG>Masculino</STRONG></label>
+                <input type="radio" name="sexo" id="femi">
+                <label for="femi"><STRONG>Feminino</STRONG></label>
+            </p>
+            <p>
+                <input type="submit" value="CHECAR" onclick="checar()">
+            </p>
+            
+        </div>
+        <div id="res">
+            Preencha os campos acima para identificar sua idade e gênero.
+        </div>
+    </section>
+    <footer>
+       <p>&copy; CursoemVideo</p>
+    </footer>
+    <script src="script.js"></script>
+    
+</body>
+</html>
