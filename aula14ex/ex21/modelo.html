@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>
+           Exercícios
+        </h1>
+    </header>
+    <section>
+        <h1>Contador</h1>
+        <div>
+            <p>Inicio: <input type="number" name="ini" id="txtini"></p>
+            <p>Final: <input type="number" name="fim" id="txtfim"></p>
+            <p>Passo: <input type="number" name="pas" id="txtpas"></p>
+            <p><input type="button" value="Gerar Contagem" onclick="contagem()"></p><hr>
+        </div>
+        <div id="txtres">
+            Aguardando...
+        </div>
+    </section>
+     
+    <section>
+        <h1>Tabuada</h1>
+        <div>
+            <p>Número Tabuada: <input type="number" name="tab" id="txttab"><input type="button" value="Gerar" onclick="tabuada()"><hr></p>
+        </div>
+        <div>
+            <select name="lista" id="txtlis" size="11">
+                <option>Aguardando...</option>
+            </select>
+        </div>
+    </section>
+    
+    <footer>
+       <p>&copy; CursoemVideo</p>
+    </footer>
+    <script src="script.js"></script>
+    
+</body>
+</html>
