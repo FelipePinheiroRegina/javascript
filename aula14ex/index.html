@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treinando</title>
+    <style>
+        body {
+            font: 20px normal, arial ;
+        }
+        
+        div#res {
+            margin-top: 20px;
+        }
+
+        input[type=text]{
+            width: 105px;
+            
+        }
+
+        div#naci {
+            margin-top: 20px;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Radar</h1>
+    
+    <p>Velocidade permitida da Via <strong>60 </strong>km/h.</p>
+    
+    <input type="text" name="vel" id="vel" placeholder="Velocímetro km/h">
+    <input type="button" value="Checar" onclick="checar()">
+    
+    <div id="res">
+        
+    </div>
+    
+    <p>Seja prudente e use sempre o cinto de segurança!</p>
+
+    <h1>Nacionalidade</h1>
+    <input type="text" name="nac" id="nac" placeholder="País">
+    <input type="button" value="Checar" onclick="nacionalidade()" >
+    <div id="naci">
+
+    </div>
+    
+    <script>
+        function checar(){
+            var res = window.document.getElementById('res')
+            var vel = window.document.getElementById('vel')
+            var vp = Number(vel.value)
+            res.innerHTML = `Sua velocidade é de <strong>${vp}</strong> Km/h.`
+            if (vp > 60){
+                res.innerHTML += `<br><strong>VOCÊ EXCEDEU O LIMITE DE VELOCIDADE, MULTADO!</strong>`
+                res.style.backgroundColor = 'red'
+            } else {
+                res.style.backgroundColor = 'white'
+            }
+        }
+        
+        function nacionalidade(){
+            var pais = window.document.getElementById('nac')
+            var r = window.document.getElementById('naci')
+            p = String(pais.value)
+            r.innerHTML = `Você nasceu no<sup>(a)</sup> ${p}<br>`
+            if (p == 'Brasil'){
+                r.innerHTML += 'Você é <strong>Brasileiro</strong>'
+                r.style.backgroundColor = 'green'
+            } else {
+                r.innerHTML += 'Você é <strong>Estrangeiro</strong>'
+                r.style.backgroundColor = 'white'
+            }
+        }
+    </script>
+</body>
+</html>
