@@ -26,6 +26,7 @@ function Adicionar(){
             let item = document.createElement('option')
             item.text = `Número ${numero.value} Adicionado!`
             lista.appendChild(item)
+            resultado.innerHTML = ''
 
     } else {
         alert('Valor invalido ou ja encontrado na lista!')
@@ -38,15 +39,30 @@ function Finalizar(){
     if (valores.length == 0){
         window.alert('Adicione números antes de finalizar!')
     } else {
+        let tot = valores.length
         let maior = valores[0]
         let menor = valores[0]
-        for (let pos in valores){
-            if (pos.value > maior.value){
-                maior = pos
+        let soma = 0 
+        let media = 0
+        for (let pos in valores) {
+            soma += valores[pos]
+            if (valores[pos] > maior){
+                maior = valores[pos]
             }
+            if (valores[pos] < menor){
+                menor = valores[pos]
+            }
+            media = soma / tot
+            
         }
+        resultado.innerHTML = `<p>Você adicionou ${tot} números ao todo. </p>`
+        resultado.innerHTML += `<p>O maior número adicionado é ${maior}.</p>`
+        resultado.innerHTML += `<p>O menor número adicionado é ${menor}.</p>`
+        resultado.innerHTML += `<p>A soma dos valores adicionados é ${soma}.</p>`
+        resultado.innerHTML += `<p>A média dos valores adicionados é ${media.toFixed(2)}.</p>`
     }
 
-    resultado.innerHTML = `O maior número é ${maior}`
+   
+    
 
 }
