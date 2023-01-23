@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+
 body {
     font: normal 15px Arial;
     background-color: rgb(29, 63, 90);
@@ -19,10 +20,12 @@ section {
     box-shadow: 5px 5px 10px black;
 }
 
-select#list {
+div#list {
     width: 175px;
-    height: 120px;
+    height: 175px;
     padding: 5px;
+    border: 1px solid black;
+    margin: 5px 0px 5px 0px;
 }
 
 div#res {
