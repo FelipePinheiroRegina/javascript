@@ -15,9 +15,9 @@ section {
     background-color: white;
     border-radius: 10px;
     padding: 5px;
-    width: 400px;
+    width: 350px;
     margin: auto;
-    box-shadow: 5px 5px 10px black;
+    box-shadow: 2px 2px 5px black;
 }
 
 div#list {
