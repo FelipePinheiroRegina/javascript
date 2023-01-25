@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Solitreo&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Solitreo', cursiva;
+} 
+
+section#tab {
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    display: none;
+}
+
+section#cont {
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    display: none;
+}
+
+
