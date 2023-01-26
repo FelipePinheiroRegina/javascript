@@ -8,18 +8,58 @@
     font-family: 'Solitreo', cursiva;
 } 
 
-section#tab {
-    width: 200px;
-    height: 200px;
-    border: 1px solid black;
-    display: none;
+header {
+    background-color: yellow;
 }
 
-section#cont {
-    width: 200px;
-    height: 200px;
-    border: 1px solid black;
-    display: none;
+header h1 {
+    text-align: center;
+    padding: 20px;
 }
+
+div#menu {
+    background-color: yellow;
+    text-align: center;
+    cursor: pointer;
+}
+
+nav#itens {
+    display: none;
+    display: block;
+    
+}
+
+nav > ul > li {
+    text-decoration-style: none;
+    
+}
+
+nav > ul > li > a {
+    background-image: linear-gradient(to right, yellow, transparent);
+    color: black;
+}
+
+main {
+    background-color: yellow;
+    width: 400px;
+    height: 400px;
+    margin: 20px auto 0px auto;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px black;
+}
+
+section {
+    display: none;
+    width: 350px;
+    height: 350px;
+    background-color: white;
+    margin: 25px auto 0px auto;
+    border-radius: 10px;
+    
+    
+}
+
+
 
 

@@ -6,24 +6,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeto Js</title>
     <link rel="stylesheet" href="estilos/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 </head>
 <body id="ola">
     <header>
         <h1>Projeto JavaScript</h1>
     </header>
-    <nav>
-        <a href="#">Tabuada</a>
-        <a href="#" onclick="Contador()">Contador</a>
-        <a href="#">Analisador de números</a>
-        <a href="#">Analisador de idade</a>
-        <a href="#" on>Horas do dia</a>
+    <div id="menu">
+        <span class="material-icons" onclick="clickMenu()">menu</span>
+    </div>
+    <nav id="itens">
+        <ul>
+            <li><a href="#" onclick="Tabuada()">Tabuada</a>
+            <li><a href="#" onclick="Contador()">Contador</a>
+            <li><a href="#" onclick="HorasD()">Horas do dia</a>
+            <li><a href="#" onclick="Anaid()">Analisador de idade</a>
+            <li><a href="#" onclick="Ananu()">Analisador de números</a>
+        </ul>
     </nav>
     <main>
         <section id="tab">
-
+            Tabuada
         </section>
         <section id="cont">
-
+            Contador
+        </section>
+        <section id="horasd">
+            horas do dia
+        </section>
+        <section id="anaid">
+            analisador de idade
+        </section>
+        <section id="ananu">
+            analisador de numeros
         </section>
         <script src="javascript/script.js"></script>        
     </main>
