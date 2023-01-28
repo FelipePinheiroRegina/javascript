@@ -79,3 +79,64 @@ function Ananu(){
         blocoananu.style.display = 'none'
     }
 }
+
+// --------- TABUADA -------------
+
+let tabuada = window.document.getElementById('txtab')
+let restab = window.document.querySelector('div#restab')
+
+function gerar(){
+    if (tabuada.value.length == 0) {
+        alert ('Digite um número para gerar a tabuada!')
+    } else {
+        restab.innerHTML = ''
+        let t = Number(tabuada.value)
+        for (let c = 1; c <= 10; c++){
+            restab.innerHTML += `${t} x ${c} = ${c*t}<br>`
+        }
+    }
+}
+
+function limpart(){
+    restab.innerHTML = ''
+}
+
+// -------- CONTADOR ---------------
+
+let inicio = window.document.getElementById('txtinicio')
+let fim = window.document.getElementById('txtfim')
+let passo = window.document.getElementById('txtpasso')
+let rescont = window.document.getElementById('rescont')
+
+function contar(){
+    if(inicio.value.length == 0 || fim.value.length == 0){
+        alert ('[CAMPO VAZIO!')
+    } else {
+        let i = Number(inicio.value)
+        let f = Number(fim.value)
+        let p = Number(passo.value)
+        
+        if(p == 0){
+            alert ('"Passo Vazio!", Considerando "Passo 1"')
+            p = 1
+        }
+        rescont.innerHTML = 'Contagem iniciada:'
+        if(i < f){
+            for(let c = i; c <= f; c+= p){
+                rescont.innerHTML += ` ${c}.. \u{1F418} `
+            }
+        } else if(i > f){
+            for(let c = i; c >= f; c-= p){
+                rescont.innerHTML += `
+                ${c}.. \u{1F418}`
+            }
+        }
+    }
+}
+
+function limparc(){
+    rescont.innerHTML = ''
+}
+
+// ----------- HORAS DO DIA --------------
+    

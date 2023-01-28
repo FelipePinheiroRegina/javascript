@@ -27,16 +27,48 @@
     </nav>
     <main>
         <section id="tab">
-            Tabuada
+            <h2>Tabuada</h2>
+            <div>
+                <p>
+                    Número: <input type="number" name="tabuada" id="txtab">
+                    <input type="button" value="Gerar tabuada" onclick="gerar()">
+                </p>
+            </div>
+            <div id="restab">
+                
+            </div>
+            <div>
+                <input type="reset" value="Limpar" onclick="limpart()">
+            </div>
         </section>
         <section id="cont">
-            Contador
+            <h2>Contador</h2>
+            <div>
+                <p>Inicio: <input type="number" name="inicio" id="txtinicio"></p> 
+                <p>Fim: <input type="number" name="fim" id="txtfim"> </p>
+                <p>Passo: <input type="number" name="passo" id="txtpasso"></p>
+                <p><input type="button" value="Gerar contagem" onclick="contar()"></p>
+            </div>
+            <div id="rescont">
+
+            </div>
+            <div><input type="reset" value="Limpar" onclick="limparc()"></div>
         </section>
         <section id="horasd">
-            horas do dia
+            <div>
+               Que horas são?: <input type="number" name="horas" id="txthora">
+               <input type="button" value="Forçar horário">
+            </div>
+            <div id="reshora">
+                <img src="" alt="">
+            </div>
         </section>
         <section id="anaid">
-            analisador de idade
+            <div>
+                <input type="number" name="nascimento" id="txtnasc">
+                <input type="radio" name="sexo" id="masc">
+                <input type="radio" name="sexo" id="femi">
+            </div>
         </section>
         <section id="ananu">
             analisador de numeros
