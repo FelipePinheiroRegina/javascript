@@ -56,10 +56,17 @@ section {
     background-color: white;
     margin: 25px auto 0px auto;
     border-radius: 10px;
+    overflow: hidden;
     
     
 }
 
+img {
+    float: right;
+    width: 350px;
+    height: 326px;
+    
+}
 
 
 

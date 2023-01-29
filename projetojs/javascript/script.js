@@ -139,4 +139,20 @@ function limparc(){
 }
 
 // ----------- HORAS DO DIA --------------
-    
+
+let horadia = new Date()
+let hora  = horadia.getHours()
+let minutos = horadia.getMinutes()
+let horario = window.document.getElementById('horario')
+let reshora = window.document.getElementById('reshora')
+let img = window.document.getElementById('img')
+
+horario.innerHTML = `Agora são ${hora} Horas ${minutos} Minutos`
+
+if(hora > 18){
+    reshora.innerHTML = 'Bom dia'
+    img.setAttribute('src','imagens/boatarde-p.jpg')
+    reshora.appendChild(img)
+}else {
+    reshora.innerHTML = 'troxa'
+}
