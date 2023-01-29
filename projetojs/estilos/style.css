@@ -57,14 +57,16 @@ section {
     margin: 25px auto 0px auto;
     border-radius: 10px;
     overflow: hidden;
-    
-    
+}
+
+section#horasd {
+    height: 370px;
 }
 
 img {
-    float: right;
-    width: 350px;
-    height: 326px;
+   position: relative;
+   top: 5px; 
+   left: 20%;
     
 }
 

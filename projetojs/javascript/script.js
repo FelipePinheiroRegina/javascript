@@ -4,6 +4,7 @@ let blococont = window.document.getElementById('cont')
 let blocohora = window.document.getElementById('horasd')
 let blocoanaid = window.document.getElementById('anaid')
 let blocoananu = window.document.getElementById('ananu')
+let main = window.document.getElementById('m')
 
 function clickMenu(){
     if (itens.style.display == 'none'){
@@ -51,6 +52,7 @@ function HorasD(){
         blococont.style.display = 'none'
         blocoanaid.style.display = 'none'
         blocoananu.style.display = 'none'
+        main.style.width = '450px'
     } else {
         blocohora.style.display = 'none'
     }
@@ -149,10 +151,3 @@ let img = window.document.getElementById('img')
 
 horario.innerHTML = `Agora são ${hora} Horas ${minutos} Minutos`
 
-if(hora > 18){
-    reshora.innerHTML = 'Bom dia'
-    img.setAttribute('src','imagens/boatarde-p.jpg')
-    reshora.appendChild(img)
-}else {
-    reshora.innerHTML = 'troxa'
-}
