@@ -17,6 +17,10 @@ header h1 {
     padding: 20px;
 }
 
+header h2 {
+    text-align: center;
+}
+
 div#menu {
     background-color: yellow;
     text-align: center;
@@ -65,9 +69,8 @@ section#horasd {
 
 img {
    position: relative;
-   top: 5px; 
-   left: 20%;
-    
+   
+   
 }
 
 

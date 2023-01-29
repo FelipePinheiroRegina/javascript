@@ -4,7 +4,6 @@ let blococont = window.document.getElementById('cont')
 let blocohora = window.document.getElementById('horasd')
 let blocoanaid = window.document.getElementById('anaid')
 let blocoananu = window.document.getElementById('ananu')
-let main = window.document.getElementById('m')
 
 function clickMenu(){
     if (itens.style.display == 'none'){
@@ -52,7 +51,6 @@ function HorasD(){
         blococont.style.display = 'none'
         blocoanaid.style.display = 'none'
         blocoananu.style.display = 'none'
-        main.style.width = '450px'
     } else {
         blocohora.style.display = 'none'
     }
@@ -144,10 +142,166 @@ function limparc(){
 
 let horadia = new Date()
 let hora  = horadia.getHours()
-let minutos = horadia.getMinutes()
 let horario = window.document.getElementById('horario')
 let reshora = window.document.getElementById('reshora')
 let img = window.document.getElementById('img')
+let main = window.document.getElementById('m')
+let b = window.document.getElementById('bomdia')
 
-horario.innerHTML = `Agora são ${hora} Horas ${minutos} Minutos`
+horario.innerHTML = `Agora são ${hora} Horas`
+
+if(hora <= 12){
+    img.setAttribute('src','imagens/bomdia.jpg')
+    img.style.left = '20px'
+    img.style.borderRadius = '5px'
+    img.style.height = '285px'
+    img.style.boxShadow = '1px 1px 10px #F3C4A2'
+        
+    main.style.backgroundColor = '#F3C4A2'
+    horario.style.backgroundColor = '#F3C4A2'
+        
+    b.style.padding = '50px'
+    b.style.fontSize = '4vh'
+    b.style.float = 'left'
+    b.innerHTML = `B <br> O <br> M <br> D <br> I <br> A <br> !`
+
+} else if(hora <= 18){
+    img.setAttribute('src','imagens/boatarde.jpg')
+    img.style.left = '25px'
+    img.style.top = '10px'
+    img.style.borderRadius = '5px'
+    img.style.boxShadow = '1px 1px 10px #B2D2F0'
+
+    main.style.backgroundColor = '#B2D2F0'
+    horario.style.backgroundColor = '#B2D2F0'
+    
+    b.style.float = ''
+    b.innerHTML = `B  O  A   T A R D E!`
+    b.style.textAlign = 'center'
+    b.style.marginTop = '20px'
+    b.style.fontSize = '6vh'
+    
+} else if(hora >= 19){
+    img.setAttribute('src','imagens/boanoite.jpg')
+    img.style.left = '25px'
+    img.style.top = '10px'
+    img.style.borderRadius = '5px'
+    img.style.boxShadow = '1px 1px 10px #0467A0'
+
+    main.style.backgroundColor = '#0467A0'
+    horario.style.backgroundColor = '#0467A0'
+    
+    b.style.float = ''
+    b.innerHTML = `B  O  A   N O  I T E!`
+    b.style.textAlign = 'center'
+    b.style.marginTop = '20px'
+    b.style.fontSize = '6vh'
+}
+
+function forçar(){
+    let horaforçada = window.document.getElementById('txthora')
+    hora = Number(horaforçada.value)
+    horario.innerHTML = `Agora são ${hora} Horas`
+    
+    if(hora >= 6 && hora <= 12){
+        img.setAttribute('src','imagens/bomdia.jpg')
+        img.style.left = '20px'
+        img.style.borderRadius = '5px'
+        img.style.height = '285px'
+        img.style.boxShadow = '1px 1px 10px #F3C4A2'
+        
+        main.style.backgroundColor = '#F3C4A2'
+        horario.style.backgroundColor = '#F3C4A2'
+        
+        b.style.padding = '50px'
+        b.style.fontSize = '4vh'
+        b.style.float = 'left'
+        b.innerHTML = `B <br> O <br> M <br> D <br> I <br> A <br> !`
+        
+    } else if(hora >= 13 && hora <= 18){
+        img.setAttribute('src','imagens/boatarde.jpg')
+        img.style.left = '25px'
+        img.style.top = '10px'
+        img.style.borderRadius = '5px'
+        img.style.boxShadow = '1px 1px 10px #B2D2F0'
+
+        main.style.backgroundColor = '#B2D2F0'
+        horario.style.backgroundColor = '#B2D2F0'
+    
+        b.style.float = ''
+        b.innerHTML = `B  O  A   T A R D E!`
+        b.style.textAlign = 'center'
+        b.style.marginTop = '20px'
+        b.style.fontSize = '6vh'
+    
+    } else if(hora >= 19 || hora <= 5){
+        img.setAttribute('src','imagens/boanoite.jpg')
+        img.style.left = '25px'
+        img.style.top = '10px'
+        img.style.borderRadius = '5px'
+        img.style.boxShadow = '1px 1px 10px #0467A0'
+
+        main.style.backgroundColor = '#0467A0'
+        horario.style.backgroundColor = '#0467A0'
+        
+        b.style.float = ''
+        b.innerHTML = `B  O  A   N O  I T E!`
+        b.style.textAlign = 'center'
+        b.style.marginTop = '20px'
+        b.style.fontSize = '6vh'
+    }
+}
+
+function limparh(){
+    hora = horadia.getHours()
+    horario.innerHTML = `Agora são ${hora} Horas`
+    
+    if(hora <= 12){
+        img.setAttribute('src','imagens/bomdia.jpg')
+        img.style.left = '20px'
+        img.style.borderRadius = '5px'
+        img.style.height = '285px'
+        img.style.boxShadow = '1px 1px 10px #F3C4A2'
+        
+        main.style.backgroundColor = '#F3C4A2'
+        horario.style.backgroundColor = '#F3C4A2'
+        
+        b.style.padding = '50px'
+        b.style.fontSize = '4vh'
+        b.style.float = 'left'
+        b.innerHTML = `B <br> O <br> M <br> D <br> I <br> A <br> !`
+    
+    } else if(hora <= 18){
+        img.setAttribute('src','imagens/boatarde.jpg')
+        img.style.left = '25px'
+        img.style.top = '10px'
+        img.style.borderRadius = '5px'
+        img.style.boxShadow = '1px 1px 10px #B2D2F0'
+
+        main.style.backgroundColor = '#B2D2F0'
+        horario.style.backgroundColor = '#B2D2F0'
+        
+        b.style.float = 'right'
+        b.innerHTML = `B  O  A   T A R D E!`
+        b.style.textAlign = 'center'
+        b.style.marginTop = '20px'
+        b.style.fontSize = '6vh'
+    
+    } else if(hora >= 19){
+        img.setAttribute('src','imagens/boanoite.jpg')
+        img.style.left = '25px'
+        img.style.top = '10px'
+        img.style.borderRadius = '5px'
+        img.style.boxShadow = '1px 1px 10px #0467A0'
+
+        main.style.backgroundColor = '#0467A0'
+        horario.style.backgroundColor = '#0467A0'
+        
+        b.style.float = ''
+        b.innerHTML = `B  O  A   N O  I T E!`
+        b.style.textAlign = 'center'
+        b.style.marginTop = '20px'
+        b.style.fontSize = '6vh'
+    }
+}
 
