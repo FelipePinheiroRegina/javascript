@@ -29,8 +29,6 @@ div#menu {
 
 nav#itens {
     display: none;
-    display: block;
-    
 }
 
 nav > ul > li {
@@ -51,6 +49,7 @@ main {
     border: 1px solid black;
     border-radius: 10px;
     box-shadow: 0px 0px 10px black;
+    display: none;
 }
 
 section {
@@ -67,9 +66,18 @@ section#horasd {
     height: 370px;
 }
 
+div#reshora > p#msg {
+    text-align: center;
+    font-weight: bolder;
+    letter-spacing: 3px;
+    font-size: 20px;
+}
+
 img {
-   position: relative;
-   
+    position: relative;
+
+    left: 50%;
+    transform: translate(-50%);
    
 }
 

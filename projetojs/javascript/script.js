@@ -8,6 +8,7 @@ let blocoananu = window.document.getElementById('ananu')
 function clickMenu(){
     if (itens.style.display == 'none'){
         itens.style.display = 'block'
+        main.style.backgroundColor = 'yellow'
     } else {
         itens.style.display = 'none'
         blocotab.style.display ='none'
@@ -15,18 +16,22 @@ function clickMenu(){
         blocohora.style.display = 'none'
         blocoanaid.style.display = 'none'
         blocoananu.style.display = 'none'
+        main.style.display = 'none'
     }  
 }
 
 function Tabuada(){
     if (blocotab.style.display == 'none'){
         blocotab.style.display = 'block'
+        main.style.display = 'block'
+        main.style.backgroundColor = 'yellow'
         blococont.style.display = 'none'
         blocohora.style.display = 'none'
         blocoanaid.style.display = 'none'
         blocoananu.style.display = 'none'
     } else {
         blocotab.style.display ='none'
+        main.style.display = 'none'
        
     }
 }
@@ -34,12 +39,15 @@ function Tabuada(){
 function Contador(){
     if (blococont.style.display == 'none'){
         blococont.style.display = 'block'
+        main.style.display = 'block'
+        main.style.backgroundColor = 'yellow'
         blocotab.style.display ='none'
         blocohora.style.display = 'none'
         blocoanaid.style.display = 'none'
         blocoananu.style.display = 'none'
     } else {
         blococont.style.display = 'none'
+        main.style.display = 'none'
         
     }
 }
@@ -47,36 +55,72 @@ function Contador(){
 function HorasD(){
     if (blocohora.style.display == 'none'){
         blocohora.style.display = 'block'
+        main.style.display = 'block'
         blocotab.style.display ='none'
         blococont.style.display = 'none'
         blocoanaid.style.display = 'none'
         blocoananu.style.display = 'none'
+        let horadia = new Date()
+        let hora  = horadia.getHours()
+        horario.innerHTML = `Agora são ${hora} Horas`
+            if(hora <= 12){
+                img.setAttribute('src','imagens/circulo-bdia.jpg')
+                img.style.textAlign = 'center'
+                        
+                main.style.backgroundColor = '#F3C4A2'
+                horario.style.backgroundColor = '#F3C4A2'
+                        
+                msg.innerHTML = `B O M   D  I  A!`
+            
+            } else if(hora <= 18){
+                img.setAttribute('src','imagens/circulo-btarde.jpg')
+                    
+                main.style.backgroundColor = '#B2D2F0'
+                horario.style.backgroundColor = '#B2D2F0'
+                    
+                msg.innerHTML = `B  O  A   T A R D E!`
+                    
+            } else if(hora >= 19){
+                img.setAttribute('src','imagens/circulo-bnoite.jpg')
+                main.style.backgroundColor = '#0467A0'
+                horario.style.backgroundColor = '#0467A0'
+                msg.innerHTML = `B O A  N O I T E!`
+                    
+            }
     } else {
         blocohora.style.display = 'none'
+        main.style.display = 'none'
+        
     }
 }
 
 function Anaid(){
     if (blocoanaid.style.display == 'none'){
         blocoanaid.style.display = 'block'
+        main.style.display = 'block'
+        main.style.backgroundColor = 'yellow'
         blocotab.style.display ='none'
         blococont.style.display = 'none'
         blocohora.style.display = 'none'
         blocoananu.style.display = 'none'
     } else {
         blocoanaid.style.display = 'none'
+        main.style.display = 'none'
     }
 }
 
 function Ananu(){
     if (blocoananu.style.display == 'none'){
         blocoananu.style.display = 'block'
+        main.style.display = 'block'
+        main.style.backgroundColor = 'yellow'
         blocotab.style.display ='none'
         blococont.style.display = 'none'
         blocohora.style.display = 'none'
         blocoanaid.style.display = 'none'
     } else {
         blocoananu.style.display = 'none'
+        main.style.display = 'none'
     }
 }
 
@@ -146,162 +190,80 @@ let horario = window.document.getElementById('horario')
 let reshora = window.document.getElementById('reshora')
 let img = window.document.getElementById('img')
 let main = window.document.getElementById('m')
-let b = window.document.getElementById('bomdia')
+let msg = window.document.getElementById('msg')
+let horaforçada = window.document.getElementById('txthora')
 
 horario.innerHTML = `Agora são ${hora} Horas`
 
-if(hora <= 12){
-    img.setAttribute('src','imagens/bomdia.jpg')
-    img.style.left = '20px'
-    img.style.borderRadius = '5px'
-    img.style.height = '285px'
-    img.style.boxShadow = '1px 1px 10px #F3C4A2'
-        
-    main.style.backgroundColor = '#F3C4A2'
-    horario.style.backgroundColor = '#F3C4A2'
-        
-    b.style.padding = '50px'
-    b.style.fontSize = '4vh'
-    b.style.float = 'left'
-    b.innerHTML = `B <br> O <br> M <br> D <br> I <br> A <br> !`
-
-} else if(hora <= 18){
-    img.setAttribute('src','imagens/boatarde.jpg')
-    img.style.left = '25px'
-    img.style.top = '10px'
-    img.style.borderRadius = '5px'
-    img.style.boxShadow = '1px 1px 10px #B2D2F0'
-
-    main.style.backgroundColor = '#B2D2F0'
-    horario.style.backgroundColor = '#B2D2F0'
-    
-    b.style.float = ''
-    b.innerHTML = `B  O  A   T A R D E!`
-    b.style.textAlign = 'center'
-    b.style.marginTop = '20px'
-    b.style.fontSize = '6vh'
-    
-} else if(hora >= 19){
-    img.setAttribute('src','imagens/boanoite.jpg')
-    img.style.left = '25px'
-    img.style.top = '10px'
-    img.style.borderRadius = '5px'
-    img.style.boxShadow = '1px 1px 10px #0467A0'
-
-    main.style.backgroundColor = '#0467A0'
-    horario.style.backgroundColor = '#0467A0'
-    
-    b.style.float = ''
-    b.innerHTML = `B  O  A   N O  I T E!`
-    b.style.textAlign = 'center'
-    b.style.marginTop = '20px'
-    b.style.fontSize = '6vh'
-}
-
 function forçar(){
-    let horaforçada = window.document.getElementById('txthora')
     hora = Number(horaforçada.value)
-    horario.innerHTML = `Agora são ${hora} Horas`
-    
-    if(hora >= 6 && hora <= 12){
-        img.setAttribute('src','imagens/bomdia.jpg')
-        img.style.left = '20px'
-        img.style.borderRadius = '5px'
-        img.style.height = '285px'
-        img.style.boxShadow = '1px 1px 10px #F3C4A2'
+    if(hora > 23){
+        alert('Horário incorreto!')
+    } else{
+        horario.innerHTML = `Agora são ${hora} Horas`
         
-        main.style.backgroundColor = '#F3C4A2'
-        horario.style.backgroundColor = '#F3C4A2'
+        if(hora >= 6 && hora <= 12){
+            img.setAttribute('src','imagens/circulo-bdia.jpg')
         
-        b.style.padding = '50px'
-        b.style.fontSize = '4vh'
-        b.style.float = 'left'
-        b.innerHTML = `B <br> O <br> M <br> D <br> I <br> A <br> !`
+            main.style.backgroundColor = '#F3C4A2'
+            horario.style.backgroundColor = '#F3C4A2'    
         
-    } else if(hora >= 13 && hora <= 18){
-        img.setAttribute('src','imagens/boatarde.jpg')
-        img.style.left = '25px'
-        img.style.top = '10px'
-        img.style.borderRadius = '5px'
-        img.style.boxShadow = '1px 1px 10px #B2D2F0'
-
-        main.style.backgroundColor = '#B2D2F0'
-        horario.style.backgroundColor = '#B2D2F0'
-    
-        b.style.float = ''
-        b.innerHTML = `B  O  A   T A R D E!`
-        b.style.textAlign = 'center'
-        b.style.marginTop = '20px'
-        b.style.fontSize = '6vh'
-    
-    } else if(hora >= 19 || hora <= 5){
-        img.setAttribute('src','imagens/boanoite.jpg')
-        img.style.left = '25px'
-        img.style.top = '10px'
-        img.style.borderRadius = '5px'
-        img.style.boxShadow = '1px 1px 10px #0467A0'
-
-        main.style.backgroundColor = '#0467A0'
-        horario.style.backgroundColor = '#0467A0'
+            msg.innerHTML = `B O M   D  I  A!`
+            
+        } else if(hora >= 13 && hora <= 18){
+            img.setAttribute('src','imagens/circulo-btarde.jpg')
         
-        b.style.float = ''
-        b.innerHTML = `B  O  A   N O  I T E!`
-        b.style.textAlign = 'center'
-        b.style.marginTop = '20px'
-        b.style.fontSize = '6vh'
+            main.style.backgroundColor = '#B2D2F0'
+            horario.style.backgroundColor = '#B2D2F0'
+        
+            msg.innerHTML = 'B O A  T A R D E!'
+            
+        } else if(hora >= 19 || hora <= 5){
+            img.setAttribute('src','imagens/circulo-bnoite.jpg')
+            
+            main.style.backgroundColor = '#0467A0'
+            horario.style.backgroundColor = '#0467A0'
+            
+            msg.innerHTML = `B  O  A   N O  I T E!`
+        }  
     }
+    horaforçada.value = ''
+    horaforçada.focus()
 }
 
 function limparh(){
     hora = horadia.getHours()
     horario.innerHTML = `Agora são ${hora} Horas`
-    
-    if(hora <= 12){
-        img.setAttribute('src','imagens/bomdia.jpg')
-        img.style.left = '20px'
-        img.style.borderRadius = '5px'
-        img.style.height = '285px'
-        img.style.boxShadow = '1px 1px 10px #F3C4A2'
         
+    if(hora <= 12){
+        img.setAttribute('src','imagens/circulo-bdia.jpg')
+            
         main.style.backgroundColor = '#F3C4A2'
         horario.style.backgroundColor = '#F3C4A2'
+            
+        msg.innerHTML = `B O M   D  I  A!`
         
-        b.style.padding = '50px'
-        b.style.fontSize = '4vh'
-        b.style.float = 'left'
-        b.innerHTML = `B <br> O <br> M <br> D <br> I <br> A <br> !`
-    
     } else if(hora <= 18){
-        img.setAttribute('src','imagens/boatarde.jpg')
-        img.style.left = '25px'
-        img.style.top = '10px'
-        img.style.borderRadius = '5px'
-        img.style.boxShadow = '1px 1px 10px #B2D2F0'
-
+        img.setAttribute('src','imagens/circulo-btarde.jpg')
+        
         main.style.backgroundColor = '#B2D2F0'
         horario.style.backgroundColor = '#B2D2F0'
-        
-        b.style.float = 'right'
-        b.innerHTML = `B  O  A   T A R D E!`
-        b.style.textAlign = 'center'
-        b.style.marginTop = '20px'
-        b.style.fontSize = '6vh'
-    
+            
+        msg.innerHTML = `B  O  A   T A R D E!`
+            
     } else if(hora >= 19){
-        img.setAttribute('src','imagens/boanoite.jpg')
-        img.style.left = '25px'
-        img.style.top = '10px'
-        img.style.borderRadius = '5px'
-        img.style.boxShadow = '1px 1px 10px #0467A0'
-
+        img.setAttribute('src','imagens/circulo-bnoite.jpg')
+            
         main.style.backgroundColor = '#0467A0'
         horario.style.backgroundColor = '#0467A0'
-        
-        b.style.float = ''
-        b.innerHTML = `B  O  A   N O  I T E!`
-        b.style.textAlign = 'center'
-        b.style.marginTop = '20px'
-        b.style.fontSize = '6vh'
+            
+        msg.innerHTML = `B  O  A   N O  I T E!`
     }
-}
+    horaforçada.value = ''
+    horaforçada.focus()
+} 
+
+
+
+
 
