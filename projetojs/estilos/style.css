@@ -81,5 +81,9 @@ img {
    
 }
 
+img#imgid {
+    width: 50%;
+}
+
 
 

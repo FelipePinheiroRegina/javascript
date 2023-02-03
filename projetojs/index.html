@@ -66,7 +66,7 @@
                <input type="button" value="Limpar" onclick="limparh()">
             </div>
             <div id="reshora">
-                <img id="img" src="imagens/bomdia-p.jpg" alt="Bom-Dia">
+                <img id="img" src="imagens/horasdia/bomdia.jpg" alt="Bom-Dia">
                 <p id="msg">
                     
                 </p>
@@ -74,9 +74,22 @@
         </section>
         <section id="anaid">
             <div>
-                <input type="number" name="nascimento" id="txtnasc">
-                <input type="radio" name="sexo" id="masc">
-                <input type="radio" name="sexo" id="femi">
+                <p>
+                    Ano de nascimento: <input type="number" name="nascimento" id="txtnasc">
+                </p>
+                <p>
+                    Sexo:
+                    <label for="masc">Masculino </label>
+                    <input type="radio" name="sexo" id="masc" checked>
+                    <label for="femi">Feminino </label>
+                    <input type="radio" name="sexo" id="femi">
+                </p>
+                <input type="button" value="Analisar" onclick="analisar()">
+                <input type="button" value="Limpar" onclick="limparidade()">
+                
+            </div>
+            <div id="residade">
+                <p id="msgid"></p>
             </div>
         </section>
         <section id="ananu">

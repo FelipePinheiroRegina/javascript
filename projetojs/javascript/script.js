@@ -64,7 +64,7 @@ function HorasD(){
         let hora  = horadia.getHours()
         horario.innerHTML = `Agora são ${hora} Horas`
             if(hora <= 12){
-                img.setAttribute('src','imagens/circulo-bdia.jpg')
+                img.setAttribute('src','imagens/horasdia/circulo-bdia.jpg')
                 img.style.textAlign = 'center'
                         
                 main.style.backgroundColor = '#F3C4A2'
@@ -73,7 +73,7 @@ function HorasD(){
                 msg.innerHTML = `B O M   D  I  A!`
             
             } else if(hora <= 18){
-                img.setAttribute('src','imagens/circulo-btarde.jpg')
+                img.setAttribute('src','imagens/horasdia/circulo-btarde.jpg')
                     
                 main.style.backgroundColor = '#B2D2F0'
                 horario.style.backgroundColor = '#B2D2F0'
@@ -81,7 +81,7 @@ function HorasD(){
                 msg.innerHTML = `B  O  A   T A R D E!`
                     
             } else if(hora >= 19){
-                img.setAttribute('src','imagens/circulo-bnoite.jpg')
+                img.setAttribute('src','imagens/horasdia/circulo-bnoite.jpg')
                 main.style.backgroundColor = '#0467A0'
                 horario.style.backgroundColor = '#0467A0'
                 msg.innerHTML = `B O A  N O I T E!`
@@ -203,7 +203,7 @@ function forçar(){
         horario.innerHTML = `Agora são ${hora} Horas`
         
         if(hora >= 6 && hora <= 12){
-            img.setAttribute('src','imagens/circulo-bdia.jpg')
+            img.setAttribute('src','imagens/horasdia/circulo-bdia.jpg')
         
             main.style.backgroundColor = '#F3C4A2'
             horario.style.backgroundColor = '#F3C4A2'    
@@ -211,7 +211,7 @@ function forçar(){
             msg.innerHTML = `B O M   D  I  A!`
             
         } else if(hora >= 13 && hora <= 18){
-            img.setAttribute('src','imagens/circulo-btarde.jpg')
+            img.setAttribute('src','imagens/horasdia/circulo-btarde.jpg')
         
             main.style.backgroundColor = '#B2D2F0'
             horario.style.backgroundColor = '#B2D2F0'
@@ -219,7 +219,7 @@ function forçar(){
             msg.innerHTML = 'B O A  T A R D E!'
             
         } else if(hora >= 19 || hora <= 5){
-            img.setAttribute('src','imagens/circulo-bnoite.jpg')
+            img.setAttribute('src','imagens/horasdia/circulo-bnoite.jpg')
             
             main.style.backgroundColor = '#0467A0'
             horario.style.backgroundColor = '#0467A0'
@@ -236,7 +236,7 @@ function limparh(){
     horario.innerHTML = `Agora são ${hora} Horas`
         
     if(hora <= 12){
-        img.setAttribute('src','imagens/circulo-bdia.jpg')
+        img.setAttribute('src','imagens/horasdia/circulo-bdia.jpg')
             
         main.style.backgroundColor = '#F3C4A2'
         horario.style.backgroundColor = '#F3C4A2'
@@ -244,7 +244,7 @@ function limparh(){
         msg.innerHTML = `B O M   D  I  A!`
         
     } else if(hora <= 18){
-        img.setAttribute('src','imagens/circulo-btarde.jpg')
+        img.setAttribute('src','imagens/horasdia/circulo-btarde.jpg')
         
         main.style.backgroundColor = '#B2D2F0'
         horario.style.backgroundColor = '#B2D2F0'
@@ -252,7 +252,7 @@ function limparh(){
         msg.innerHTML = `B  O  A   T A R D E!`
             
     } else if(hora >= 19){
-        img.setAttribute('src','imagens/circulo-bnoite.jpg')
+        img.setAttribute('src','imagens/horasdia/circulo-bnoite.jpg')
             
         main.style.backgroundColor = '#0467A0'
         horario.style.backgroundColor = '#0467A0'
@@ -263,7 +263,50 @@ function limparh(){
     horaforçada.focus()
 } 
 
+// ------------- ANALISADOR DE IDADE ----------------
 
+let ano = new Date()
+let anoatual = ano.getFullYear()
+let nascimento = window.document.getElementById('txtnasc')
+let sexo = window.document.getElementsByName('sexo')
+let residade = window.document.getElementById('residade')
+let msgid = window.document.getElementById('msgid')
+
+function analisar(){
+    if(nascimento.value.length > 4){
+        alert('Ano de nascimento invalido!')
+        nascimento.value = ''
+        nascimento.focus()
+    } else {
+        let n = Number(nascimento.value)
+        let idade = anoatual - n
+        let genero = ''
+        let imgid = document.createElement('img')
+        imgid.setAttribute('id','imgid')
+    
+        if(sexo[0].checked){
+            genero = 'Masculino'
+            
+            if(idade < 3){
+                imgid.setAttribute('src','imagens/anaid/bebe-mas.png')
+                msgid.innerHTML = `Você nasceu no ano de ${n}, esse ano você completa<sup>(ou)</sup> ${idade} anos, Você é um neném do sexo ${genero}.`
+                residade.appendChild(imgid)
+            } 
+        
+        } else if(sexo[1].checked){
+            genero = 'Feminino'
+        }
+    }
+        
+    
+    
+}
+
+function limparidade(){
+    nascimento.value = ''
+    nascimento.focus()
+    residade.innerHTML= ''
+}
 
 
 
