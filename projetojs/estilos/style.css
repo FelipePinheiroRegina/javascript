@@ -76,7 +76,8 @@ div#reshora > p#msg {
 div#msgnume {
     margin-top: 10px;
     margin-right: 5px;
-    width: 200px;
+    padding: 3px;
+    width: 220px;
     height: 285px;
     border: 1px solid black;
     float: right;
@@ -93,6 +94,10 @@ div#resnume {
     border: 1px solid black;
     
     
+}
+
+input[type=number]{
+    width: 100px;
 }
 
 img {

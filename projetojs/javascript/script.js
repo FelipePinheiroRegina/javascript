@@ -272,7 +272,7 @@ let sexo = window.document.getElementsByName('sexo')
 let residade = window.document.getElementById('residade')
 let msgid = window.document.getElementById('msgid')
 
-function analisar(){
+function analisarid(){
     if(nascimento.value.length > 4 || nascimento.value.length <= 3){
         alert('Ano de nascimento invalido!')
         nascimento.value = ''
@@ -366,6 +366,11 @@ let valores = []
 
 function adicionar(){
     if(entreumcem(numero.value) && !naotem(numero.value, valores)){
+        if(valores.length > 12){
+            valores = []
+            numadc.innerHTML = ''
+        }
+        msgnum.innerHTML = ''
         valores.push(Number(numero.value))
         numadc.innerHTML += ` ${numero.value} adicionado!<br>`
     }else{
@@ -382,10 +387,35 @@ function analisar(){
         let tot = valores.length
         let maior = valores[0]
         let menor = valores[0]
+        let soma = 0
+        let media = 0
         
-        msgnum.innerHTML = `Você digitou ${tot} números.`
+        for (let pos in valores){
+            soma += valores[pos]
+            if(valores[pos] > maior){
+                maior = valores[pos]
+            }
+            if(valores[pos] < menor){
+                menor = valores[pos]
+            }
+        }
+        media = soma / tot
+
+        msgnum.innerHTML = `Você adicionou ${tot} números.<br>`
+        msgnum.innerHTML += `Maior número adicionado ${maior}.<br>`
+        msgnum.innerHTML += `Menor número adicionado ${menor}.<br>`
+        msgnum.innerHTML += `A soma de todos números é ${soma}.<br>`
+        msgnum.innerHTML += `Dividindo ${soma} por ${tot} temos ${media.toFixed(2)}.`
+        
     }
     
+}
+
+function limparananu(){
+    valores = []
+    msgnum.innerHTML = ''
+    numadc.innerHTML = ''
+    numero.focus()
 }
 
 function entreumcem(n){
