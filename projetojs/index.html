@@ -32,33 +32,31 @@
                 <p>
                     Número: <input type="number" name="tabuada" id="txtab">
                     <input type="button" value="Gerar tabuada" onclick="gerar()">
+                    <input type="button" value="Limpar" onclick="limpart()">
                 </p>
             </div>
             <div id="restab">
-                
-            </div>
-            <div>
-                <input type="reset" value="Limpar" onclick="limpart()">
+               
             </div>
         </section>
         <section id="cont">
             <h2>Contador</h2>
             <div>
-                <p>Inicio: <input type="number" name="inicio" id="txtinicio"></p> 
-                <p>Fim: <input type="number" name="fim" id="txtfim"> </p>
-                <p>Passo: <input type="number" name="passo" id="txtpasso"></p>
-                <p><input type="button" value="Gerar contagem" onclick="contar()"></p>
+                <p><input type="number" name="inicio" id="txtinicio" placeholder="Inicio: 1 ou 10"></p>
+                <p><input type="number" name="fim" id="txtfim" placeholder="Fim: 10 ou 1"> </p>
+                <p><input type="number" name="passo" id="txtpasso" placeholder="Passo: 1 ou 2"></p>
+                <input type="button" value="Gerar contagem" onclick="contar()">
+                <input type="button" value="Limpar" onclick="limparc()">
             </div>
-            <div id="rescont">
+            <div id="rescont" class="container">
 
             </div>
-            <div><input type="reset" value="Limpar" onclick="limparc()"></div>
         </section>
         <section id="horasd">
             <header>
-                <h2 id="horario">
+                <h3 id="horario">
                    
-                </h2>
+                </h3>
             </header>
             <div>
                Que horas são?: <input type="number" name="horas" id="txthora"><br>

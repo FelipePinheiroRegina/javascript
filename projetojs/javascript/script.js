@@ -138,11 +138,15 @@ function gerar(){
         for (let c = 1; c <= 10; c++){
             restab.innerHTML += `${t} x ${c} = ${c*t}<br>`
         }
+        tabuada.value = ''
+        tabuada.focus()
     }
 }
 
 function limpart(){
     restab.innerHTML = ''
+    tabuada.value = ''
+    tabuada.focus()
 }
 
 // -------- CONTADOR ---------------
@@ -175,6 +179,10 @@ function contar(){
                 ${c}.. \u{1F418}`
             }
         }
+        inicio.value = ''
+        inicio.focus()
+        fim.value = ''
+        passo.value = ''
     }
 }
 
