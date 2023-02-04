@@ -73,6 +73,28 @@ div#reshora > p#msg {
     font-size: 20px;
 }
 
+div#msgnume {
+    margin-top: 10px;
+    margin-right: 5px;
+    width: 200px;
+    height: 285px;
+    border: 1px solid black;
+    float: right;
+   
+   
+}
+
+div#resnume {
+    margin-top: 10px;
+    margin-left: 5px;
+    padding: 3px;
+    width: 105px;
+    height: 285px;
+    border: 1px solid black;
+    
+    
+}
+
 img {
     position: relative;
 

@@ -273,7 +273,7 @@ let residade = window.document.getElementById('residade')
 let msgid = window.document.getElementById('msgid')
 
 function analisar(){
-    if(nascimento.value.length > 4){
+    if(nascimento.value.length > 4 || nascimento.value.length <= 3){
         alert('Ano de nascimento invalido!')
         nascimento.value = ''
         nascimento.focus()
@@ -286,15 +286,63 @@ function analisar(){
     
         if(sexo[0].checked){
             genero = 'Masculino'
+            residade.innerHTML = ''
             
             if(idade < 3){
                 imgid.setAttribute('src','imagens/anaid/bebe-mas.png')
                 msgid.innerHTML = `Você nasceu no ano de ${n}, esse ano você completa<sup>(ou)</sup> ${idade} anos, Você é um neném do sexo ${genero}.`
                 residade.appendChild(imgid)
-            } 
+            }else if(idade >= 4 && idade <= 12){
+                imgid.setAttribute('src','imagens/anaid/crianca-mas.png')
+                msgid.innerHTML = `Você nasceu no ano de ${n}, esse ano você completa<sup>(ou)</sup> ${idade} anos, Você é uma criança do sexo ${genero}.`
+                residade.appendChild(imgid)
+            }else if(idade >= 13 && idade <=17){
+                imgid.setAttribute('src','imagens/anaid/jovem-mas.png')
+                msgid.innerHTML = `Você nasceu no ano de ${n}, esse ano você completa<sup>(ou)</sup> ${idade} anos, Você é um jovem do sexo ${genero}.`
+                residade.appendChild(imgid)
+            }else if(idade >= 18 && idade <= 40){
+                imgid.setAttribute('src','imagens/anaid/adulto-mas.png')
+                msgid.innerHTML = `Você nasceu no ano de ${n}, esse ano você completa<sup>(ou)</sup> ${idade} anos, Você é um adulto do sexo ${genero}.`
+                residade.appendChild(imgid)
+            }else if(idade >= 41 && idade <= 60){
+                imgid.setAttribute('src','imagens/anaid/adulto+mas.png')
+                msgid.innerHTML = `Você nasceu no ano de ${n}, esse ano você completa<sup>(ou)</sup> ${idade} anos, Você é um adulto do sexo ${genero}.`
+                residade.appendChild(imgid)
+            }else if(idade >= 61){
+                imgid.setAttribute('src','imagens/anaid/idoso-mas.png')
+                msgid.innerHTML = `Você nasceu no ano de ${n}, esse ano você completa<sup>(ou)</sup> ${idade} anos, Você é um idoso do sexo ${genero}.`
+                residade.appendChild(imgid)
+            }
         
         } else if(sexo[1].checked){
             genero = 'Feminino'
+            residade.innerHTML = ''
+            
+            if(idade < 3){
+                imgid.setAttribute('src','imagens/anaid/bebe-fem.png')
+                msgid.innerHTML = `Você nasceu no ano de ${n}, esse ano você completa<sup>(ou)</sup> ${idade} anos, Você é um neném do sexo ${genero}.`
+                residade.appendChild(imgid)
+            }else if(idade >= 4 && idade <= 12){
+                imgid.setAttribute('src','imagens/anaid/crianca-fem.png')
+                msgid.innerHTML = `Você nasceu no ano de ${n}, esse ano você completa<sup>(ou)</sup> ${idade} anos, Você é uma criança do sexo ${genero}.`
+                residade.appendChild(imgid)
+            }else if(idade >= 13 && idade <=17){
+                imgid.setAttribute('src','imagens/anaid/jovem-fem.png')
+                msgid.innerHTML = `Você nasceu no ano de ${n}, esse ano você completa<sup>(ou)</sup> ${idade} anos, Você é um jovem do sexo ${genero}.`
+                residade.appendChild(imgid)
+            }else if(idade >= 18 && idade <= 40){
+                imgid.setAttribute('src','imagens/anaid/adulto-fem.png')
+                msgid.innerHTML = `Você nasceu no ano de ${n}, esse ano você completa<sup>(ou)</sup> ${idade} anos, Você é um adulto do sexo ${genero}.`
+                residade.appendChild(imgid)
+            }else if(idade >= 41 && idade <= 60){
+                imgid.setAttribute('src','imagens/anaid/adulto+fem.png')
+                msgid.innerHTML = `Você nasceu no ano de ${n}, esse ano você completa<sup>(ou)</sup> ${idade} anos, Você é um adulto do sexo ${genero}.`
+                residade.appendChild(imgid)
+            }else if(idade >= 61){
+                imgid.setAttribute('src','imagens/anaid/idoso-fem.png')
+                msgid.innerHTML = `Você nasceu no ano de ${n}, esse ano você completa<sup>(ou)</sup> ${idade} anos, Você é um idoso do sexo ${genero}.`
+                residade.appendChild(imgid)
+            }
         }
     }
         
@@ -305,8 +353,55 @@ function analisar(){
 function limparidade(){
     nascimento.value = ''
     nascimento.focus()
-    residade.innerHTML= ''
+    residade.innerHTML = ''
+    msgid.innerHTML = ''
 }
 
+// ----------------- ANALISADOR DE NÚMEROS ------------
+
+let numero = window.document.getElementById('txtnumero')
+let numadc = window.document.getElementById('resnume')
+let msgnum = window.document.getElementById('msgnume')
+let valores = []
+
+function adicionar(){
+    if(entreumcem(numero.value) && !naotem(numero.value, valores)){
+        valores.push(Number(numero.value))
+        numadc.innerHTML += ` ${numero.value} adicionado!<br>`
+    }else{
+        alert('[ERRO] NÚMERO INVÁLIDO OU JA FOI ADICIONADO NA LISTA!')
+    }
+    numero.value = ''
+    numero.focus()
+}
+
+function analisar(){
+    if(valores.length == 0){
+        alert ('Adicione números antes de finalizar.')
+    } else{
+        let tot = valores.length
+        let maior = valores[0]
+        let menor = valores[0]
+        
+        msgnum.innerHTML = `Você digitou ${tot} números.`
+    }
+    
+}
+
+function entreumcem(n){
+    if(Number(n) >= 1 && Number(n) <= 100){
+        return true
+    }else{
+        return false
+    }
+}
+
+function naotem(n, l){
+    if(l.indexOf(Number(n)) != - 1){
+        return true
+    }else{
+        return false
+    }
+}
 
 

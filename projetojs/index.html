@@ -75,7 +75,7 @@
         <section id="anaid">
             <div>
                 <p>
-                    Ano de nascimento: <input type="number" name="nascimento" id="txtnasc">
+                    Ano de nascimento: <input type="number" name="nascimento" id="txtnasc" placeholder="ex: 1998 ">
                 </p>
                 <p>
                     Sexo:
@@ -88,12 +88,24 @@
                 <input type="button" value="Limpar" onclick="limparidade()">
                 
             </div>
+            <p id="msgid"></p>
             <div id="residade">
-                <p id="msgid"></p>
+                
             </div>
         </section>
         <section id="ananu">
-            analisador de numeros
+            <div>
+                <p>Adicione números (entre 1 á 100)</p>
+                Numero: <input type="number" name="numero" id="txtnumero">
+                <input type="button" value="Adicionar" onclick="adicionar()">
+                <input type="button" value="Analisar" onclick="analisar()">
+            </div>
+            <div id="msgnume">
+
+            </div>
+            <div id="resnume">
+
+            </div>
         </section>
         <script src="javascript/script.js"></script>        
     </main>
