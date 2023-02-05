@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+@media screen and (min-width: 768px) {
+    nav#itens{
+        display: block;
+    }
+
+    nav > ul > li > a {
+        display: inline;
+    }
+}
