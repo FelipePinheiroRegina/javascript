@@ -68,22 +68,21 @@ function HorasD(){
                 img.style.textAlign = 'center'
                         
                 main.style.backgroundColor = '#F3C4A2'
-                horario.style.backgroundColor = '#F3C4A2'
-                        
+                
                 msg.innerHTML = `B O M   D  I  A!`
             
             } else if(hora <= 18){
                 img.setAttribute('src','imagens/horasdia/circulo-btarde.jpg')
                     
                 main.style.backgroundColor = '#B2D2F0'
-                horario.style.backgroundColor = '#B2D2F0'
-                    
+               
                 msg.innerHTML = `B  O  A   T A R D E!`
                     
             } else if(hora >= 19){
                 img.setAttribute('src','imagens/horasdia/circulo-bnoite.jpg')
+                
                 main.style.backgroundColor = '#0467A0'
-                horario.style.backgroundColor = '#0467A0'
+               
                 msg.innerHTML = `B O A  N O I T E!`
                     
             }
@@ -133,6 +132,7 @@ function gerar(){
     if (tabuada.value.length == 0) {
         alert ('Digite um número para gerar a tabuada!')
     } else {
+        restab.style.border = '1px solid yellow'
         restab.innerHTML = ''
         let t = Number(tabuada.value)
         for (let c = 1; c <= 10; c++){
@@ -147,6 +147,7 @@ function limpart(){
     restab.innerHTML = ''
     tabuada.value = ''
     tabuada.focus()
+    restab.style.border = '1px solid white'
 }
 
 // -------- CONTADOR ---------------
@@ -188,6 +189,8 @@ function contar(){
 
 function limparc(){
     rescont.innerHTML = ''
+    inicio.value = ''
+    inicio.focus()
 }
 
 // ----------- HORAS DO DIA --------------
@@ -214,24 +217,21 @@ function forçar(){
             img.setAttribute('src','imagens/horasdia/circulo-bdia.jpg')
         
             main.style.backgroundColor = '#F3C4A2'
-            horario.style.backgroundColor = '#F3C4A2'    
-        
+           
             msg.innerHTML = `B O M   D  I  A!`
             
         } else if(hora >= 13 && hora <= 18){
             img.setAttribute('src','imagens/horasdia/circulo-btarde.jpg')
         
             main.style.backgroundColor = '#B2D2F0'
-            horario.style.backgroundColor = '#B2D2F0'
-        
+            
             msg.innerHTML = 'B O A  T A R D E!'
             
         } else if(hora >= 19 || hora <= 5){
             img.setAttribute('src','imagens/horasdia/circulo-bnoite.jpg')
             
             main.style.backgroundColor = '#0467A0'
-            horario.style.backgroundColor = '#0467A0'
-            
+           
             msg.innerHTML = `B  O  A   N O  I T E!`
         }  
     }
@@ -247,24 +247,21 @@ function limparh(){
         img.setAttribute('src','imagens/horasdia/circulo-bdia.jpg')
             
         main.style.backgroundColor = '#F3C4A2'
-        horario.style.backgroundColor = '#F3C4A2'
-            
+        
         msg.innerHTML = `B O M   D  I  A!`
         
     } else if(hora <= 18){
         img.setAttribute('src','imagens/horasdia/circulo-btarde.jpg')
         
         main.style.backgroundColor = '#B2D2F0'
-        horario.style.backgroundColor = '#B2D2F0'
-            
+        
         msg.innerHTML = `B  O  A   T A R D E!`
             
     } else if(hora >= 19){
         img.setAttribute('src','imagens/horasdia/circulo-bnoite.jpg')
             
         main.style.backgroundColor = '#0467A0'
-        horario.style.backgroundColor = '#0467A0'
-            
+        
         msg.innerHTML = `B  O  A   N O  I T E!`
     }
     horaforçada.value = ''
@@ -291,12 +288,14 @@ function analisarid(){
         let genero = ''
         let imgid = document.createElement('img')
         imgid.setAttribute('id','imgid')
-    
+        residade.style.border = '1px solid black'
+        msgid.style.border = '1px solid black'
+        
         if(sexo[0].checked){
             genero = 'Masculino'
             residade.innerHTML = ''
             
-            if(idade < 3){
+            if(idade <= 3){
                 imgid.setAttribute('src','imagens/anaid/bebe-mas.png')
                 msgid.innerHTML = `Você nasceu no ano de ${n}, esse ano você completa<sup>(ou)</sup> ${idade} anos, Você é um neném do sexo ${genero}.`
                 residade.appendChild(imgid)
@@ -321,12 +320,14 @@ function analisarid(){
                 msgid.innerHTML = `Você nasceu no ano de ${n}, esse ano você completa<sup>(ou)</sup> ${idade} anos, Você é um idoso do sexo ${genero}.`
                 residade.appendChild(imgid)
             }
+            nascimento.value = ''
+            nascimento.focus()
         
         } else if(sexo[1].checked){
             genero = 'Feminino'
             residade.innerHTML = ''
             
-            if(idade < 3){
+            if(idade <= 3){
                 imgid.setAttribute('src','imagens/anaid/bebe-fem.png')
                 msgid.innerHTML = `Você nasceu no ano de ${n}, esse ano você completa<sup>(ou)</sup> ${idade} anos, Você é um neném do sexo ${genero}.`
                 residade.appendChild(imgid)
@@ -351,6 +352,8 @@ function analisarid(){
                 msgid.innerHTML = `Você nasceu no ano de ${n}, esse ano você completa<sup>(ou)</sup> ${idade} anos, Você é um idoso do sexo ${genero}.`
                 residade.appendChild(imgid)
             }
+            nascimento.value = ''
+            nascimento.focus()
         }
     }
         
@@ -363,6 +366,8 @@ function limparidade(){
     nascimento.focus()
     residade.innerHTML = ''
     msgid.innerHTML = ''
+    residade.style.border = '1px solid white'
+    msgid.style.border = '1px solid white'
 }
 
 // ----------------- ANALISADOR DE NÚMEROS ------------
@@ -374,13 +379,9 @@ let valores = []
 
 function adicionar(){
     if(entreumcem(numero.value) && !naotem(numero.value, valores)){
-        if(valores.length > 12){
-            valores = []
-            numadc.innerHTML = ''
-        }
         msgnum.innerHTML = ''
         valores.push(Number(numero.value))
-        numadc.innerHTML += ` ${numero.value} adicionado!<br>`
+        numadc.innerHTML += ` ${numero.value} adicionado!<hr><br>`
     }else{
         alert('[ERRO] NÚMERO INVÁLIDO OU JA FOI ADICIONADO NA LISTA!')
     }
@@ -409,10 +410,10 @@ function analisar(){
         }
         media = soma / tot
 
-        msgnum.innerHTML = `Você adicionou ${tot} números.<br>`
-        msgnum.innerHTML += `Maior número adicionado ${maior}.<br>`
-        msgnum.innerHTML += `Menor número adicionado ${menor}.<br>`
-        msgnum.innerHTML += `A soma de todos números é ${soma}.<br>`
+        msgnum.innerHTML = `Você adicionou ${tot} números.<hr><br>`
+        msgnum.innerHTML += `Maior número adicionado ${maior}.<hr><br>`
+        msgnum.innerHTML += `Menor número adicionado ${menor}.<hr><br>`
+        msgnum.innerHTML += `A soma de todos números é ${soma}.<hr><br>`
         msgnum.innerHTML += `Dividindo ${soma} por ${tot} temos ${media.toFixed(2)}.`
         
     }

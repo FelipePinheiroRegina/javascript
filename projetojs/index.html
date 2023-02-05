@@ -53,15 +53,17 @@
             </div>
         </section>
         <section id="horasd">
-            <header>
+            <div>
                 <h3 id="horario">
                    
                 </h3>
-            </header>
-            <div>
-               Que horas são?: <input type="number" name="horas" id="txthora"><br>
-               <input type="button" value="Forçar horário" onclick="forçar()">
+                <hr>
+            <p>
+                horas ?: <input 
+                type="number" name="horas" id="txthora" placeholder="16">
+               <input type="button" value="Forçar horário"        onclick="forçar()">
                <input type="button" value="Limpar" onclick="limparh()">
+            </p>
             </div>
             <div id="reshora">
                 <img id="img" src="imagens/horasdia/bomdia.jpg" alt="Bom-Dia">
@@ -71,13 +73,13 @@
             </div>
         </section>
         <section id="anaid">
-            <div>
+            <h2>Analisador de idade</h2>
+            <div id="inputs">
                 <p>
                     Ano de nascimento: <input type="number" name="nascimento" id="txtnasc" placeholder="ex: 1998 ">
                 </p>
                 <p>
-                    Sexo:
-                    <label for="masc">Masculino </label>
+                    <label for="masc">Masculino</label>
                     <input type="radio" name="sexo" id="masc" checked>
                     <label for="femi">Feminino </label>
                     <input type="radio" name="sexo" id="femi">
@@ -92,7 +94,7 @@
             </div>
         </section>
         <section id="ananu">
-            <div>
+            <div id="n">
                 <p>Adicione números (entre 1 á 100)</p>
                 Numero: <input type="number" name="numero" id="txtnumero">
                 <input type="button" value="Adicionar" onclick="adicionar()">
@@ -102,7 +104,7 @@
             <div id="msgnume">
 
             </div>
-            <div id="resnume">
+            <div id="resnume" class="container">
 
             </div>
         </section>
